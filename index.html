@@ -1,9 +1,287 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Mon Site GitHub Pages</title>
-  </head>
-  <body>
-    <h1>Bienvenue sur mon site !</h1>
-  </body>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio BTS SIO SISR de Quentin Pommet-Gravier : compétences, alternance Heliaq et dossier de documentation.">
+  <meta name="theme-color" content="#08100e">
+  <title>quentin@portfolio:~$</title>
+  <link rel="icon" type="image/x-icon" href="./pf_favicon.ico">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="prompt-brand" href="#accueil" aria-label="Retour à l'accueil">
+        <span class="prompt-dot"></span>
+        quentin@portfolio<span class="prompt-path">:~$</span>
+      </a>
+      <nav class="terminal-nav" aria-label="Navigation principale">
+        <a href="#profil">profil</a>
+        <a href="#competences">competences</a>
+        <a href="#heliaq">heliaq</a>
+        <a href="#documentation">documentation</a>
+      </nav>
+      <button class="theme-toggle" data-tog aria-label="Changer de thème">light</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="terminal-hero" id="accueil" aria-labelledby="terminal-title">
+      <div class="terminal-window">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <strong>bash — quentin@portfolio</strong>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line muted">
+            Last login: <time datetime="2026-09-15">Tue Sep 15 2026</time> on ttys001
+          </p>
+          <p class="terminal-line">
+            <span class="green">quentin@portfolio</span><span class="cyan">:~$</span> whoami
+          </p>
+          <h1 id="terminal-title">Quentin Pommet-Gravier</h1>
+          <p class="terminal-line">
+            <span class="green">quentin@portfolio</span><span class="cyan">:~$</span> cat role.txt
+          </p>
+          <p class="terminal-output accent">Étudiant BTS SIO SISR · Alternant chez Heliaq · Infrastructure & réseaux</p>
+          <p class="terminal-line">
+            <span class="green">quentin@portfolio</span><span class="cyan">:~$</span> ./open-portfolio.sh<span class="cursor" aria-hidden="true"></span>
+          </p>
+          <p class="hero-copy">
+            Bienvenue dans mon espace de compétences. Explorez mon parcours, mes environnements techniques et les missions réalisées en alternance.
+          </p>
+          <div class="command-links" aria-label="Accès rapides">
+            <a class="command-link primary" href="#heliaq">[ ouvrir alternance ]</a>
+            <a class="command-link" href="#documentation">[ lire documentation ]</a>
+            <a class="command-link" href="mailto:qpommetgravier@gmail.com">[ me contacter ]</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span><i class="status-dot"></i> système opérationnel</span>
+        <span>Avignon, France</span>
+        <span>BTS SIO · SISR · 2026—2028</span>
+      </div>
+    </section>
+
+    <section class="content-section" id="profil">
+      <div class="section-heading">
+        <span class="section-index">01</span>
+        <div>
+          <p class="eyebrow">/home/quentin/profil</p>
+          <h2>Profil système</h2>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="text-panel">
+          <p class="lead">Je construis et maintiens des environnements informatiques fiables, documentés et compréhensibles.</p>
+          <p>Actuellement en BTS SIO option SISR au CCI de Vaucluse, je développe une pratique orientée systèmes, réseaux, déploiement et support. Mon objectif : comprendre l'infrastructure de bout en bout, puis l'améliorer avec méthode.</p>
+          <div class="facts">
+            <span><b>formation</b>BTS SIO SISR</span>
+            <span><b>disponibilité</b>Alternance</span>
+            <span><b>zone</b>Avignon / Vaucluse</span>
+            <span><b>contact</b><a href="mailto:qpommetgravier@gmail.com">email</a></span>
+          </div>
+        </div>
+        <aside class="code-panel" aria-label="Résumé du profil">
+          <p class="code-comment">// profile.json</p>
+          <pre><code>{
+  <span class="key">"name"</span>: <span class="string">"Quentin"</span>,
+  <span class="key">"focus"</span>: [<span class="string">"systems"</span>, <span class="string">"networks"</span>],
+  <span class="key">"mindset"</span>: <span class="string">"learn, document, improve"</span>,
+  <span class="key">"status"</span>: <span class="bool">true</span>
+}</code></pre>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section tinted" id="competences">
+      <div class="section-heading">
+        <span class="section-index">02</span>
+        <div>
+          <p class="eyebrow">/usr/bin/skills</p>
+          <h2>Compétences SISR</h2>
+        </div>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-block">
+          <span class="skill-number">E5 · 01</span>
+          <h3>Administrer</h3>
+          <p>Windows, Windows Server 2022, Linux Ubuntu, comptes, services et environnements virtualisés.</p>
+          <div class="tag-list"><span>Windows Server</span><span>Linux</span><span>Proxmox</span><span>VMware</span></div>
+        </article>
+        <article class="skill-block">
+          <span class="skill-number">E5 · 02</span>
+          <h3>Connecter</h3>
+          <p>Adressage IP, DNS, DHCP, SSH, RDP, VLAN, Wi-Fi, brassage et diagnostic réseau.</p>
+          <div class="tag-list"><span>TCP/IP</span><span>Aruba</span><span>IPFire</span><span>RJ45</span></div>
+        </article>
+        <article class="skill-block">
+          <span class="skill-number">E6 · 03</span>
+          <h3>Sécuriser</h3>
+          <p>Contrôle des accès, segmentation, pare-feu, sauvegarde et observation des événements.</p>
+          <div class="tag-list"><span>AdGuard</span><span>ModSecurity</span><span>Elastic</span><span>Guacamole</span></div>
+        </article>
+        <article class="skill-block">
+          <span class="skill-number">E4 · 04</span>
+          <h3>Accompagner</h3>
+          <p>Déployer un poste, résoudre un incident, expliquer une procédure et laisser une documentation exploitable.</p>
+          <div class="tag-list"><span>Support</span><span>Déploiement</span><span>Procédures</span><span>Veille</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="heliaq">
+      <div class="section-heading">
+        <span class="section-index">03</span>
+        <div>
+          <p class="eyebrow">/var/log/alternance</p>
+          <h2>Alternance Heliaq</h2>
+        </div>
+      </div>
+      <div class="heliaq-layout">
+        <div class="heliaq-intro">
+          <div class="log-status"><i class="status-dot"></i> session active · septembre 2026 — août 2028</div>
+          <h3>Apprendre sur le terrain.</h3>
+          <p>Mon alternance chez Heliaq accompagne mon BTS SIO SISR. Cette page évoluera avec des traces concrètes : contexte, méthode, outils mobilisés et bilan de chaque mission.</p>
+          <a class="text-link" href="mailto:qpommetgravier@gmail.com?subject=Portfolio%20-%20Alternance%20Heliaq">Échanger sur l'alternance →</a>
+        </div>
+        <div class="mission-list" aria-label="Missions réalisées ou en cours">
+          <a class="mission-link active" href="#mission-detail" data-mission="support"><span class="mission-state">[ en cours ]</span><b>Support & déploiement</b><small>postes · utilisateurs · procédures</small><span>↗</span></a>
+          <a class="mission-link" href="#mission-detail" data-mission="reseau"><span class="mission-state">[ à venir ]</span><b>Réseaux & infrastructure</b><small>adressage · équipements · diagnostic</small><span>↗</span></a>
+          <a class="mission-link" href="#mission-detail" data-mission="documentation"><span class="mission-state">[ à venir ]</span><b>Documentation technique</b><small>inventaire · schémas · transmission</small><span>↗</span></a>
+        </div>
+      </div>
+      <div class="mission-detail" id="mission-detail" aria-live="polite">
+        <span class="detail-prompt">heliaq@alternance:~$</span>
+        <span data-mission-output>select --mission support</span>
+        <p data-mission-text>Déploiement et préparation de postes, assistance aux utilisateurs et formalisation des procédures rencontrées au quotidien.</p>
+      </div>
+    </section>
+
+    <section class="content-section tinted" id="parcours">
+      <div class="section-heading">
+        <span class="section-index">04</span>
+        <div>
+          <p class="eyebrow">/etc/timeline</p>
+          <h2>Parcours & veille</h2>
+        </div>
+      </div>
+      <div class="timeline-grid">
+        <div class="timeline-item"><span>2026—2028</span><h3>BTS SIO · option SISR</h3><p>CCI de Vaucluse, Avignon. Services informatiques aux organisations, systèmes et réseaux.</p></div>
+        <div class="timeline-item"><span>2023—2026</span><h3>BAC PRO CIEL · mention Bien</h3><p>Lycée Saint Jean Baptiste de La Salle. Électronique, réseaux et informatique embarquée.</p></div>
+        <div class="timeline-item"><span>veille active</span><h3>Observer, tester, transmettre</h3><p>Je maintiens une veille sur l'administration Linux et Windows, la virtualisation, la cybersécurité et les bonnes pratiques réseau.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="documentation">
+      <div class="section-heading">
+        <span class="section-index">05</span>
+        <div>
+          <p class="eyebrow">/home/quentin/docs</p>
+          <h2>Documentation</h2>
+        </div>
+      </div>
+      <div class="documents-grid">
+        <article class="document-card">
+          <div class="document-preview">
+            <div class="preview-bar"><span>cv.pdf</span><span>aperçu · page 1</span></div>
+            <div class="pdf-preview">
+              <canvas id="cv-preview" aria-label="Début du CV, première page"></canvas>
+              <p class="preview-status" data-preview-status>Chargement de l'aperçu…</p>
+            </div>
+          </div>
+          <div class="document-info">
+            <span class="file-type">PDF · dossier de compétences</span>
+            <h3>Curriculum vitae</h3>
+            <p>Formation, compétences techniques et expériences professionnelles.</p>
+            <div class="document-actions">
+              <a class="command-link primary" href="./_documents/cv.pdf" target="_blank" rel="noopener">[ voir ]</a>
+              <a class="command-link" href="./_documents/cv.pdf" download>[ télécharger ]</a>
+            </div>
+          </div>
+        </article>
+        <aside class="document-note">
+          <span class="file-type">/home/quentin/docs</span>
+          <h3>Mes prochaines documentations</h3>
+          <p>Les comptes rendus d'intervention, procédures réseau et fiches de veille seront ajoutés ici au fil de l'alternance.</p>
+          <p class="note-command"><span class="green">docs@portfolio</span>:~$ ls _documents/</p>
+          <p class="note-output">cv.pdf<br>documentation-technique.pdf<br>compte-rendu-heliaq.pdf</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span><span class="green">quentin@portfolio</span>:~$ exit</span>
+      <a href="mailto:qpommetgravier@gmail.com">qpommetgravier@gmail.com</a>
+      <span>© 2026</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.querySelector('[data-tog]');
+      let dark = true;
+
+      const paintTheme = () => {
+        root.dataset.theme = dark ? 'dark' : 'light';
+        themeButton.textContent = dark ? 'light' : 'dark';
+      };
+
+      paintTheme();
+      themeButton?.addEventListener('click', () => {
+        dark = !dark;
+        paintTheme();
+      });
+
+      const missionCopy = {
+        support: [
+          'select --mission support',
+          'Déploiement et préparation de postes, assistance aux utilisateurs et formalisation des procédures rencontrées au quotidien.'
+        ],
+        reseau: [
+          'select --mission reseau',
+          "Les prochaines missions viendront documenter les équipements, le diagnostic réseau et les choix d'infrastructure observés chez Heliaq."
+        ],
+        documentation: [
+          'select --mission documentation',
+          'Chaque intervention doit laisser une trace claire : contexte, actions réalisées, résultat obtenu et points de vigilance.'
+        ]
+      };
+
+      document.querySelectorAll('[data-mission]').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.mission-link').forEach((item) => item.classList.remove('active'));
+          link.classList.add('active');
+          const [command, text] = missionCopy[link.dataset.mission];
+          document.querySelector('[data-mission-output]').textContent = command;
+          document.querySelector('[data-mission-text]').textContent = text;
+        });
+      });
+
+      const previewCanvas = document.querySelector('#cv-preview');
+      const previewStatus = document.querySelector('[data-preview-status]');
+
+      import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs').then(async ({ getDocument, GlobalWorkerOptions }) => {
+        GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+        const documentPdf = await getDocument('./_documents/cv.pdf').promise;
+        const page = await documentPdf.getPage(1);
+        const viewport = page.getViewport({ scale: 1.35 });
+        const context = previewCanvas.getContext('2d');
+        previewCanvas.width = viewport.width;
+        previewCanvas.height = viewport.height;
+        await page.render({ canvasContext: context, viewport }).promise;
+        previewStatus.remove();
+      }).catch(() => {
+        previewStatus.textContent = "L'aperçu n'est pas disponible ici. Utilisez le bouton « voir ».";
+      });
+    })();
+  </script>
+</body>
 </html>
