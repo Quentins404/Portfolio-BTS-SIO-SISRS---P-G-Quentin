@@ -130,6 +130,7 @@ p { max-width: 68ch; }
 .profile-grid,
 .heliaq-layout,
 .documents-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; }
+.documents-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .text-panel { color: var(--muted); font-size: 1.05rem; }
 .text-panel .lead { margin-bottom: 1.2rem; color: var(--text); font-size: clamp(1.3rem, 2.5vw, 1.8rem); line-height: 1.3; }
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 2rem; border: 1px solid var(--line); background: var(--line); }
@@ -178,11 +179,14 @@ p { max-width: 68ch; }
 .document-note { min-width: 0; border: 1px solid var(--line); background: var(--surface); }
 .document-preview { min-width: 0; }
 .preview-bar { height: 38px; display: flex; align-items: center; justify-content: space-between; padding: 0 .9rem; border-bottom: 1px solid var(--line); color: var(--muted); font: .68rem var(--font-mono); }
+.preview-bar span { min-width: 0; overflow-wrap: anywhere; }
 .pdf-preview { position: relative; min-height: 420px; padding: 1rem; overflow: hidden; background: #fff; }
-.pdf-preview canvas { display: block; width: 100%; height: auto; box-shadow: 0 5px 18px rgba(0, 0, 0, .16); }
+.pdf-preview canvas { display: block; width: 100%; max-width: 100%; height: auto; box-shadow: 0 5px 18px rgba(0, 0, 0, .16); }
 .preview-status { position: absolute; inset: 1rem; display: grid; place-items: center; color: #24352d; font-size: .9rem; text-align: center; }
+.document-card { min-width: 0; overflow: hidden; }
 .document-info,
 .document-note { padding: 2rem; }
+.document-note { grid-column: 1 / -1; }
 .file-type { color: var(--cyan); font-size: .7rem; }
 .document-info h3,
 .document-note h3 { margin: 1rem 0; font-size: 2rem; }
@@ -202,8 +206,7 @@ footer { border-top: 1px solid var(--line); }
   .terminal-nav { gap: .65rem; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .profile-grid,
-  .heliaq-layout,
-  .documents-grid { grid-template-columns: 1fr; }
+  .heliaq-layout { grid-template-columns: 1fr; }
   .timeline-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -220,7 +223,9 @@ footer { border-top: 1px solid var(--line); }
   .terminal-body h1 { font-size: clamp(2.3rem, 12vw, 4rem); }
   .hero-meta { display: grid; gap: .4rem; }
   .skills-grid,
-  .timeline-grid { grid-template-columns: 1fr; }
+  .timeline-grid,
+  .documents-grid { grid-template-columns: 1fr; }
+  .document-note { grid-column: auto; }
   .skill-block { min-height: auto; }
   .facts { grid-template-columns: 1fr; }
   .mission-link { grid-template-columns: 75px 1fr 18px; }

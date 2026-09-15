@@ -152,7 +152,7 @@
         </div>
         <div class="mission-list" aria-label="Missions réalisées ou en cours">
           <a class="mission-link active" href="#mission-detail" data-mission="support"><span class="mission-state">[ En cours ]</span><b>Support & déploiement</b><small>Postes · utilisateurs · procédures</small><span>↗</span></a>
-          <a class="mission-link" href="#mission-detail" data-mission="reseau"><span class="mission-state">[ En cours] ]</span><b>Support N0 et N1</b><small>Dépannage · équipements · diagnostic</small><span>↗</span></a>
+          <a class="mission-link" href="#mission-detail" data-mission="reseau"><span class="mission-state">[ En cours ]</span><b>Support N0 et N1</b><small>Dépannage · équipements · diagnostic</small><span>↗</span></a>
           <a class="mission-link" href="#mission-detail" data-mission="documentation"><span class="mission-state">[ En cours ]</span><b>Documentation technique</b><small>Inventaire · schémas · transmission</small><span>↗</span></a>
         </div>
       </div>
@@ -191,7 +191,7 @@
           <div class="document-preview">
             <div class="preview-bar"><span>Documentation_GLPI.pdf</span><span>Aperçu · page 1</span></div>
             <div class="pdf-preview">
-              <canvas id="cv-preview" aria-label="Début de la documentation GLPI, première page"></canvas>
+              <canvas id="cv-preview-glpi" aria-label="Début de la documentation GLPI, première page"></canvas>
               <p class="preview-status" data-preview-status>Chargement de l'aperçu…</p>
             </div>
           </div>
@@ -204,13 +204,30 @@
               <a class="command-link" href="./documents/Documentation_GLPI.pdf" download aria-label="Télécharger la documentation GLPI">[ Télécharger ]</a>
             </div>
           </div>
+        <article class="document-card" data-preview-file="./documents/Documentation_GLPI_Agent_Windows_Linux.pdf">
+          <div class="document-preview">
+            <div class="preview-bar"><span>Documentation_GLPI_Agent_Windows_Linux.pdf</span><span>Aperçu · page 1</span></div>
+            <div class="pdf-preview">
+              <canvas id="cv-preview-agent" aria-label="Début de la documentation GLPI Agent Windows Linux, première page"></canvas>
+              <p class="preview-status" data-preview-status>Chargement de l'aperçu…</p>
+            </div>
+          </div>
+          <div class="document-info">
+            <span class="file-type">PDF · Documentation_GLPI_Agent_Windows_Linux.pdf</span>
+            <h3>Documentation GLPI</h3>
+            <p>Manuel d'utilisation et de configuration de la solution GLPI.</p>
+            <div class="document-actions">
+              <a class="command-link primary" href="./documents/Documentation_GLPI_Agent_Windows_Linux.pdf" target="_blank" rel="noopener" aria-label="Voir la documentation GLPI">[ Voir ]</a>
+              <a class="command-link" href="./documents/Documentation_GLPI_Agent_Windows_Linux.pdf" download aria-label="Télécharger la documentation GLPI Agent">[ Télécharger ]</a>
+            </div>
+          </div>
         </article>
         <aside class="document-note">
           <span class="file-type">/home/quentin/docs</span>
           <h3>Mes prochaines documentations</h3>
           <p>Ici, vous trouverez principalement mes documentations de TP et celle réalisées pendant l'alternance.</p>
           <p class="note-command"><span class="green">docs@portfolio</span>:~$ ls documents/</p>
-          <p class="note-output">Documentation_GLPI.pdf<br><br></p>
+          <p class="note-output">Documentation_GLPI.pdf<br><br>Documentation_GLPI_Agent_Windows_Linux.pdf</p>
         </aside>
       </div>
     </section>
