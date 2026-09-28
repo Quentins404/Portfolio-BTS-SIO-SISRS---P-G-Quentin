@@ -1,0 +1,62 @@
+---
+layout: null
+project_directory: projets/laboratoire-reseau/
+---
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08100e">
+  <meta name="description" content="Fichiers du projet Laboratoire réseau de Quentin Pommet-Gravier.">
+  <title>Laboratoire réseau | Projets</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .project-browser { width: min(900px, calc(100% - 3rem)); margin: 0 auto; padding: 3rem 0 7rem; }
+    .project-back { display: inline-block; margin-bottom: 3rem; color: var(--cyan); font: .78rem var(--font-mono); }
+    .project-back:hover { color: var(--green); }
+    .project-browser h1 { margin: .5rem 0 1rem; font-size: clamp(2.5rem, 8vw, 5rem); }
+    .project-intro { margin-bottom: 2.5rem; color: var(--muted); }
+    .files-toolbar { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 1rem; border: 1px solid var(--line); background: var(--surface-2); color: var(--muted); font: .7rem var(--font-mono); }
+    .project-files { list-style: none; border: 1px solid var(--line); border-top: 0; }
+    .project-file + .project-file { border-top: 1px solid var(--line); }
+    .project-file a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; background: var(--surface); transition: background 160ms ease; }
+    .project-file a:hover { background: var(--surface-2); }
+    .project-file-name { overflow-wrap: anywhere; color: var(--text); }
+    .project-file-meta { flex: 0 0 auto; color: var(--cyan); font: .68rem var(--font-mono); }
+    .files-state { padding: 1.2rem; color: var(--muted); font-size: .9rem; }
+    .project-browser footer { margin-top: 0; }
+    @media (max-width: 600px) {
+      .project-browser { width: min(100% - 2rem, 900px); padding-top: 2rem; }
+      .project-back { margin-bottom: 2rem; }
+      .project-file a { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="project-browser">
+    <a class="project-back" href="../../index.html#projets">← Retour aux projets</a>
+    <p class="eyebrow">/home/quentin/projets/laboratoire-reseau</p>
+    <h1>Laboratoire réseau</h1>
+    <p class="project-intro">Fichiers et sous-dossiers déposés dans ce répertoire.</p>
+    <!-- {% assign project_files = site.static_files | where_exp: "file", "file.path contains page.project_directory" | where_exp: "file", "file.name != 'index.html'" | sort: "path" %} -->
+    <div class="files-toolbar"><span>CONTENU DU PROJET</span><span data-file-count>{{ project_files.size }} fichier(s)</span></div>
+    <ul class="project-files" data-project-files aria-live="polite">
+      <!-- {% for file in project_files %} -->
+      <li class="project-file"><a href="{{ file.path | relative_url }}"><span class="project-file-name">{{ file.path | remove_first: page.project_directory }}</span><span class="project-file-meta">{{ file.extname | remove_first: '.' | upcase }} ↗</span></a></li>
+      <!-- {% endfor %} -->
+      <!-- {% if project_files.size == 0 %} -->
+      <li class="files-state">Aucun fichier à afficher pour le moment.</li>
+      <!-- {% endif %} -->
+    </ul>
+  </main>
+  <script type="module">
+    const filesList = document.querySelector('[data-project-files]');
+    const fileCount = document.querySelector('[data-file-count]');
+    if (filesList.innerHTML.includes('{{')) {
+      filesList.innerHTML = '<li class="files-state">La liste des fichiers locaux est générée lors de la publication Jekyll du site.</li>';
+      fileCount.textContent = 'À générer';
+    }
+  </script>
+</body>
+</html>
