@@ -53,7 +53,8 @@ project_directory: projets/laboratoire-reseau/
   <script type="module">
     const filesList = document.querySelector('[data-project-files]');
     const fileCount = document.querySelector('[data-file-count]');
-    if (filesList.innerHTML.includes('{{')) {
+    const liquidMarker = String.fromCharCode(123, 123);
+    if (filesList.innerHTML.includes(liquidMarker)) {
       filesList.innerHTML = '<li class="files-state">La liste des fichiers locaux est générée lors de la publication Jekyll du site.</li>';
       fileCount.textContent = 'À générer';
     }
