@@ -128,9 +128,8 @@ p { max-width: 68ch; }
 .section-heading h2 { font-size: clamp(2rem, 5vw, 4rem); }
 
 .profile-grid,
-.heliaq-layout,
-.documents-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; }
-.documents-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.heliaq-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; }
+.documents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; align-items: stretch; }
 .text-panel { color: var(--muted); font-size: 1.05rem; }
 .text-panel .lead { margin-bottom: 1.2rem; color: var(--text); font-size: clamp(1.3rem, 2.5vw, 1.8rem); line-height: 1.3; }
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 2rem; border: 1px solid var(--line); background: var(--line); }
@@ -188,24 +187,29 @@ p { max-width: 68ch; }
 
 .document-card,
 .document-note { min-width: 0; border: 1px solid var(--line); background: var(--surface); }
+.document-card { display: flex; flex-direction: column; overflow: hidden; }
 .document-preview { min-width: 0; }
-.preview-bar { height: 38px; display: flex; align-items: center; justify-content: space-between; padding: 0 .9rem; border-bottom: 1px solid var(--line); color: var(--muted); font: .68rem var(--font-mono); }
+.preview-bar { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .5rem .9rem; border-bottom: 1px solid var(--line); color: var(--muted); font: .68rem var(--font-mono); }
 .preview-bar span { min-width: 0; overflow-wrap: anywhere; }
-.pdf-preview { position: relative; min-height: 420px; padding: 1rem; overflow: hidden; background: #fff; }
-.pdf-preview canvas { display: block; width: 100%; max-width: 100%; height: auto; box-shadow: 0 5px 18px rgba(0, 0, 0, .16); }
+.preview-bar span:last-child { flex: none; }
+.pdf-preview { position: relative; aspect-ratio: 210 / 297; padding: 1rem; overflow: hidden; background: #fff; }
+.pdf-preview canvas { display: block; width: 100%; height: 100%; object-fit: contain; box-shadow: 0 5px 18px rgba(0, 0, 0, .16); }
+.pdf-preview canvas[hidden] { display: none; }
+.pdf-preview.is-ready { aspect-ratio: auto; }
+.pdf-preview.is-ready canvas { height: auto; }
 .preview-status { position: absolute; inset: 1rem; display: grid; place-items: center; color: #24352d; font-size: .9rem; text-align: center; }
-.document-card { min-width: 0; overflow: hidden; }
-.document-info,
-.document-note { padding: 2rem; }
-.document-note { grid-column: 1 / -1; }
-.file-type { color: var(--cyan); font-size: .7rem; }
-.document-info h3,
+.pdf-preview.is-empty { background: var(--surface-2); }
+.pdf-preview.is-empty .preview-status { color: var(--muted); font: .75rem var(--font-mono); }
+.document-info { flex: 1; display: flex; flex-direction: column; padding: 1.5rem; }
+.document-note { grid-column: 1 / -1; padding: 2rem; }
+.file-type { color: var(--cyan); font-size: .7rem; overflow-wrap: anywhere; }
+.document-info h3 { margin: .8rem 0; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.25; }
 .document-note h3 { margin: 1rem 0; font-size: 2rem; }
 .document-info p,
 .document-note p { margin-bottom: 1.6rem; color: var(--muted); }
-.document-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.document-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: auto; }
 .note-command { margin-top: 2rem; font-size: .72rem; }
-.note-output { padding-left: 1rem; border-left: 1px solid var(--line); color: var(--yellow); font-size: .76rem; line-height: 1.9; }
+.note-output { padding-left: 1rem; border-left: 1px solid var(--line); color: var(--yellow); font-size: .76rem; line-height: 1.9; overflow-wrap: anywhere; }
 
 footer { border-top: 1px solid var(--line); }
 .footer-inner { min-height: 90px; color: var(--muted); font-size: .7rem; }
@@ -234,15 +238,13 @@ footer { border-top: 1px solid var(--line); }
   .terminal-body h1 { font-size: clamp(2.3rem, 12vw, 4rem); }
   .hero-meta { display: grid; gap: .4rem; }
   .skills-grid,
-  .timeline-grid,
-  .documents-grid { grid-template-columns: 1fr; }
+  .timeline-grid { grid-template-columns: 1fr; }
   .project-card { min-height: 310px; }
   .document-note { grid-column: auto; }
   .skill-block { min-height: auto; }
   .facts { grid-template-columns: 1fr; }
   .mission-link { grid-template-columns: 75px 1fr 18px; }
   .footer-inner { display: grid; gap: .2rem; padding: 1.3rem 0; }
-  .pdf-preview { min-height: 320px; }
   .document-info,
   .document-note { padding: 1.3rem; }
 }
